@@ -1,0 +1,6 @@
+﻿--wewnętrzna warstwa  
+--bez zewnętrznych bibliotek, poza systemowymi  
+--Entities: modele domenowe  
+--ValueObjects: obiekty niemutowalne  
+--DomainEvents: Zdarzenia domenowe  
+--Interfaces: kontrakty  

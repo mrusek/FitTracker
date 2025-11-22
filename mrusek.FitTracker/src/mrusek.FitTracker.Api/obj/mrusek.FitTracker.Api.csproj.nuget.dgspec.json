@@ -1,0 +1,285 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Api\\mrusek.FitTracker.Api.csproj": {}
+  },
+  "projects": {
+    "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Api\\mrusek.FitTracker.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Api\\mrusek.FitTracker.Api.csproj",
+        "projectName": "mrusek.FitTracker.Api",
+        "projectPath": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Api\\mrusek.FitTracker.Api.csproj",
+        "packagesPath": "C:\\Users\\mruse\\.nuget\\packages\\",
+        "outputPath": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mruse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Application\\mrusek.FitTracker.Application.csproj": {
+                "projectPath": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Application\\mrusek.FitTracker.Application.csproj"
+              },
+              "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Domain\\mrusek.FitTracker.Domain.csproj": {
+                "projectPath": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Domain\\mrusek.FitTracker.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Asp.Versioning.Http": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "Asp.Versioning.Mvc.ApiExplorer": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
+              "target": "Package",
+              "version": "[1.13.1, )"
+            },
+            "OpenTelemetry.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[1.13.1, )"
+            },
+            "OpenTelemetry.Instrumentation.AspNetCore": {
+              "target": "Package",
+              "version": "[1.13.0, )"
+            },
+            "OpenTelemetry.Instrumentation.Http": {
+              "target": "Package",
+              "version": "[1.13.0, )"
+            },
+            "Scalar.AspNetCore": {
+              "target": "Package",
+              "version": "[2.9.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Serilog.Formatting.Compact": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Application\\mrusek.FitTracker.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Application\\mrusek.FitTracker.Application.csproj",
+        "projectName": "mrusek.FitTracker.Application",
+        "projectPath": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Application\\mrusek.FitTracker.Application.csproj",
+        "packagesPath": "C:\\Users\\mruse\\.nuget\\packages\\",
+        "outputPath": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mruse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Domain\\mrusek.FitTracker.Domain.csproj": {
+                "projectPath": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Domain\\mrusek.FitTracker.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Facet.Extensions.EFCore": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "FluentResults": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Domain\\mrusek.FitTracker.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Domain\\mrusek.FitTracker.Domain.csproj",
+        "projectName": "mrusek.FitTracker.Domain",
+        "projectPath": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Domain\\mrusek.FitTracker.Domain.csproj",
+        "packagesPath": "C:\\Users\\mruse\\.nuget\\packages\\",
+        "outputPath": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mruse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

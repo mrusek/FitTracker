@@ -1,0 +1,6 @@
+﻿using mrusek.FitTracker.Application.Abstractions.Orchestration;
+using mrusek.FitTracker.Application.Features.Recipes.Dto.v1;
+
+namespace mrusek.FitTracker.Application.Features.Products.Queries;
+
+public sealed record GetAllProductsQuery() : IQuery<GetAllProductsDto>;
