@@ -1,4 +1,4 @@
-﻿namespace mrusek.FitTracker.Application.Features.Common.v1;
+﻿namespace mrusek.FitTracker.Application.Features.Common.SearchCriteria.v1;
 
 public record SearchCriteria
 {

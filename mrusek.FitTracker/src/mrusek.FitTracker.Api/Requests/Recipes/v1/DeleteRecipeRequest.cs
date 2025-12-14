@@ -1,5 +1,3 @@
-﻿using mrusek.FitTracker.Application.Abstractions.Orchestration;
+﻿namespace mrusek.FitTracker.Api.Requests.Recipes.v1;
 
-namespace mrusek.FitTracker.Api.Requests.Recipes.v1;
-
-public sealed record DeleteRecipeRequest(Guid id) : ICommand;
+public sealed record DeleteRecipeRequest(Guid id);

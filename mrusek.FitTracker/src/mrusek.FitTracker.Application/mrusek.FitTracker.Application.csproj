@@ -19,8 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Products\Commands\v1\" />
-    <Folder Include="Features\Products\Validation\" />
+    <Folder Include="Features\Common\SearchCriteria\" />
+    <Folder Include="Features\Recipes\Commands\" />
+    <Folder Include="Features\Recipes\Queries\" />
+    <Folder Include="Features\Recipes\Validation\" />
   </ItemGroup>
 
 </Project>

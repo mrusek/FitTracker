@@ -1,8 +1,6 @@
-﻿using mrusek.FitTracker.Application.Abstractions.Orchestration;
+﻿using mrusek.FitTracker.Application.Features.Products.Dto.v1;
 
 namespace mrusek.FitTracker.Api.Requests.Products.v1;
 
 public sealed record CreateProductRequest(
-    string Name,
-    string Description,
-    IReadOnlyList<string> Tags) : ICommand;
+   ProductSaveDto ProductSaveDto);

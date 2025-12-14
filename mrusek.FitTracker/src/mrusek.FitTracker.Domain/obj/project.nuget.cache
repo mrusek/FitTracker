@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "mbN/6LyI8hM=",
+  "dgSpecHash": "p2Z1u8I2PSs=",
   "success": true,
-  "projectFilePath": "C:\\DEV\\Projects\\FitTracker\\mrusek.FitTracker\\src\\mrusek.FitTracker.Domain\\mrusek.FitTracker.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/mateusz/DEV/FitTracker/FitTracker/mrusek.FitTracker/src/mrusek.FitTracker.Domain/mrusek.FitTracker.Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/mateusz/.nuget/packages/microsoft.netcore.app.ref/9.0.11/microsoft.netcore.app.ref.9.0.11.nupkg.sha512",
+    "/home/mateusz/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.11/microsoft.aspnetcore.app.ref.9.0.11.nupkg.sha512"
+  ],
   "logs": []
 }
