@@ -1,3 +1,5 @@
 ﻿namespace mrusek.FitTracker.Application.Abstractions.Orchestration;
 
-public interface IQuery<TResponse>;
+public interface IQuery<TResponse> where TResponse: class
+{
+}

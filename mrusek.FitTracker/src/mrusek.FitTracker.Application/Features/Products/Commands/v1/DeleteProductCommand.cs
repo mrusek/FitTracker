@@ -2,4 +2,4 @@
 
 namespace mrusek.FitTracker.Application.Features.Products.Commands.v1;
 
-public sealed record DeleteProductCommand(Guid ProductId): ICommand;
+public sealed record DeleteProductCommand(Guid Id): ICommand;

@@ -1,4 +1,4 @@
-﻿namespace mrusek.FitTracker.Application.Features.Recipes.Dto.v1;
+﻿namespace mrusek.FitTracker.Application.Features.Products.Dto.v1;
 
 public class GetAllProductsDto
 {
