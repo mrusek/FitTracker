@@ -1,5 +1,6 @@
 using FluentValidation;
 using mrusek.FitTracker.Application.Features.Products.Queries;
+using mrusek.FitTracker.Application.Features.Products.Queries.v1;
 
 namespace mrusek.FitTracker.Application.Features.Products.Validation.v1;
 

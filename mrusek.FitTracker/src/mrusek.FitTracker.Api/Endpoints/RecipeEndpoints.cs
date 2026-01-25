@@ -1,9 +1,11 @@
 ﻿using Asp.Versioning;
-using FluentResults;
 using mrusek.FitTracker.Api.Extensions;
 using mrusek.FitTracker.Api.Requests.Recipes.v1;
+using mrusek.FitTracker.Application.Abstractions.Mapping;
 using mrusek.FitTracker.Application.Abstractions.Orchestration;
+using mrusek.FitTracker.Application.Features.Recipes.Commands.v1;
 using mrusek.FitTracker.Application.Features.Recipes.Dto.v1;
+using mrusek.FitTracker.Application.Features.Recipes.Queries.v1;
 
 namespace mrusek.FitTracker.Api.Endpoints;
 
@@ -53,49 +55,55 @@ public static class RecipeEndpoints
     }
 
     private static async Task<IResult> CreateRecipe(CreateRecipeRequest request,
-        ICommandHandler<CreateRecipeRequest> broker,
+        ICommandHandler<CreateRecipeCommand> broker,
+        IRequestToCommandMapper<CreateRecipeRequest, CreateRecipeCommand> mapper,
         CancellationToken cancellationToken)
     {
-        var result = await broker.Handle(request, cancellationToken);
+        var result = await broker.Handle(mapper.Map(request), cancellationToken);
         return result.ToApiResult(Results.Created);
     }
 
     private static async Task<IResult> GetRecipeById(Guid id,
-        IQueryHandler<GetRecipeByIdRequest, GetRecipeByIdDto> broker,
+        IQueryHandler<GetRecipeByIdQuery, GetRecipeByIdDto> broker,
+        IRequestToQueryMapper<GetRecipeByIdRequest, GetRecipeByIdQuery, GetRecipeByIdDto> mapper,
         CancellationToken cancellationToken)
     {
-        var result = await broker.Handle(new GetRecipeByIdRequest(id), cancellationToken);
+        var result = await broker.Handle(mapper.Map(new GetRecipeByIdRequest(id)), cancellationToken);
         return result.ToApiResult();
     }
 
     private static async Task<IResult> GetAllRecipes(
-        IQueryHandler<GetAllRecipesRequest, GetAllRecipesDto> broker,
+        IQueryHandler<GetAllRecipesQuery, GetAllRecipesDto> broker,
+        IRequestToQueryMapper<GetAllRecipesRequest, GetAllRecipesQuery, GetAllRecipesDto> mapper,
         CancellationToken cancellationToken)
     {
-        var result = await broker.Handle(new GetAllRecipesRequest(), cancellationToken);
+        var result = await broker.Handle(mapper.Map(new GetAllRecipesRequest()), cancellationToken);
         return result.ToApiResult();
     }
 
     private static async Task<IResult> GetRecipesByProducts(GetRecipesByProductsRequest request,
-        IResultCommandHandler<GetRecipesByProductsRequest, GetRecipesByProductsDto> broker,
+        IQueryHandler<GetRecipesByProductsQuery, GetRecipesByProductsDto> broker,
+        IRequestToQueryMapper<GetRecipesByProductsRequest, GetRecipesByProductsQuery, GetRecipesByProductsDto> mapper,
         CancellationToken cancellationToken)
     {
-        var result = await broker.Handle(request, cancellationToken);
+        var result = await broker.Handle(mapper.Map(request), cancellationToken);
         return result.ToApiResult();
     }
 
-    private static async Task<IResult> DeleteRecipe(Guid id, ICommandHandler<DeleteRecipeRequest> broker,
+    private static async Task<IResult> DeleteRecipe(Guid id, ICommandHandler<DeleteRecipeCommand> broker,
+        IRequestToCommandMapper<DeleteRecipeRequest, DeleteRecipeCommand> mapper,
         CancellationToken cancellationToken)
     {
-        var result = await broker.Handle(new DeleteRecipeRequest(id), cancellationToken);
+        var result = await broker.Handle(mapper.Map(new DeleteRecipeRequest(id)), cancellationToken);
         return result.ToApiResult(onSuccess: Results.NoContent);
     }
 
     private static async Task<IResult> UpdateRecipe(UpdateRecipeRequest request,
-        ICommandHandler<UpdateRecipeRequest> broker,
+        ICommandHandler<UpdateRecipeCommand> broker,
+        IRequestToCommandMapper<UpdateRecipeRequest, UpdateRecipeCommand> mapper,
         CancellationToken cancellationToken)
     {
-        var result = await broker.Handle(request, cancellationToken);
+        var result = await broker.Handle(mapper.Map(request), cancellationToken);
         return result.ToApiResult(onSuccess: Results.Created);
     }
 }
