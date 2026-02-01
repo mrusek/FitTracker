@@ -1,6 +1,3 @@
 ﻿namespace mrusek.FitTracker.Application.Features.Products.Dto.v1;
 
-public class GetAllProductsDto
-{
-    
-}
+public sealed record GetAllProductsDto(ICollection<ProductOutputDto> Products);

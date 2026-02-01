@@ -4,19 +4,28 @@ using Microsoft.AspNetCore.RateLimiting;
 using mrusek.FitTracker.Api.Endpoints;
 using mrusek.FitTracker.Api.Extensions;
 using mrusek.FitTracker.Api.Middleware;
+using mrusek.FitTracker.Application;
+using mrusek.FitTracker.Application.Abstractions.Orchestration;
 using mrusek.FitTracker.Domain.Interfaces;
+using mrusek.FitTracker.Infrastructure.Services;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using Scalar.AspNetCore;
 using Serilog;
-using Serilog.Formatting.Compact;
 using Serilog.Formatting.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddProblemDetails();
+builder.Services.Scan(scan =>
+    scan.FromAssembliesOf(typeof(Program), typeof(DependencyInjection), typeof(ICommand))
+        .AddClasses()
+        .AsMatchingInterface()
+        .WithScopedLifetime());
+    
+    
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddApiVersioning(options =>
 {
@@ -28,7 +37,10 @@ builder.Services.AddApiVersioning(options =>
     options.SubstituteApiVersionInUrl = true;
 });
 builder.Services.AddOpenApi();
-
+if (builder.Environment.IsDevelopment())
+    builder.Services.AddSingleton<ISecretManager, UserSecretManager>();
+else
+    builder.Services.AddSingleton<ISecretManager, EnvSecretManager>();
 builder.Services.AddAuthentication().AddJwtBearer()
     .AddScheme<AuthenticationSchemeOptions, ApiKeyAuthenticationHandler>("", options => { });
 builder.Services.AddAuthorization();
@@ -71,6 +83,7 @@ builder.Services.AddOpenTelemetry()
     .UseOtlpExporter();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ICurrentSessionProvider, CurrentSessionProvider>();
+builder.Services.AddHealthChecks();
 var app = builder.Build();
 app.MapHealthChecks("/hc");
 app.UseExceptionHandler();
@@ -82,8 +95,8 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.MapScalarApiReference("/api-docs");
 }
-
-app.MapRecipeEndpoints();
-app.MapProductEndpoints();
+app.MapGet("/", () => "Hello World!"); 
+ app.MapRecipeEndpoints();
+ app.MapProductEndpoints();
 
 await app.RunAsync();

@@ -1,0 +1,7 @@
+- [X] Simple Hello World on /
+- [X] Logging to console
+- [X] Logging to file
+- [X] Audit logs to console
+- [X] Audit logs to file
+- [X] Open Api support
+- [X] Healthcheck

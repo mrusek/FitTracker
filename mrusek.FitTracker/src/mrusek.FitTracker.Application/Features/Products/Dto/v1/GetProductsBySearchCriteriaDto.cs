@@ -1,6 +1,5 @@
-﻿namespace mrusek.FitTracker.Application.Features.Recipes.Dto.v1;
+﻿using mrusek.FitTracker.Application.Features.Common.SearchCriteria.v1;
 
-public class GetProductsBySearchCriteriaDto
-{
-    
-}
+namespace mrusek.FitTracker.Application.Features.Recipes.Dto.v1;
+
+public sealed record GetProductsBySearchCriteriaDto(SearchCriteria SearchCriteria);

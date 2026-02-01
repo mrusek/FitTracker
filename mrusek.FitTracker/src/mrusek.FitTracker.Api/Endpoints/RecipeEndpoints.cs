@@ -1,4 +1,5 @@
 ﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Mvc;
 using mrusek.FitTracker.Api.Extensions;
 using mrusek.FitTracker.Api.Requests.Recipes.v1;
 using mrusek.FitTracker.Application.Abstractions.Mapping;
@@ -34,29 +35,29 @@ public static class RecipeEndpoints
         group.MapGet("/{id}", GetRecipeById)
             .Produces(200)
             .WithSummary("Get recipe by id");
-
+        
         group.MapPut("/{id}", UpdateRecipe)
             .Accepts<UpdateRecipeRequest>("application/json")
             .Produces(201)
             .WithSummary("Updates recipe");
-
+        
         group.MapPost("/search", GetRecipesByProducts)
             .Accepts<GetRecipesByProductsRequest>("application/json")
             .Produces(200)
             .WithSummary("Creates new recipe");
-
+        
         group.MapGet("/all", GetAllRecipes)
             .Produces(200)
             .WithSummary("Gets all recipes");
-
+        
         group.MapDelete("/{id}", DeleteRecipe)
             .Produces(204)
             .WithSummary("Deletes recipe");
     }
 
-    private static async Task<IResult> CreateRecipe(CreateRecipeRequest request,
-        ICommandHandler<CreateRecipeCommand> broker,
-        IRequestToCommandMapper<CreateRecipeRequest, CreateRecipeCommand> mapper,
+    private static async Task<IResult> CreateRecipe([FromBody]CreateRecipeRequest request,
+        [FromServices]ICommandHandler<CreateRecipeCommand> broker,
+        [FromServices]IRequestToCommandMapper<CreateRecipeRequest, CreateRecipeCommand> mapper,
         CancellationToken cancellationToken)
     {
         var result = await broker.Handle(mapper.Map(request), cancellationToken);
@@ -64,8 +65,8 @@ public static class RecipeEndpoints
     }
 
     private static async Task<IResult> GetRecipeById(Guid id,
-        IQueryHandler<GetRecipeByIdQuery, GetRecipeByIdDto> broker,
-        IRequestToQueryMapper<GetRecipeByIdRequest, GetRecipeByIdQuery, GetRecipeByIdDto> mapper,
+        [FromServices]IQueryHandler<GetRecipeByIdQuery, GetRecipeByIdDto> broker,
+        [FromServices]IRequestToQueryMapper<GetRecipeByIdRequest, GetRecipeByIdQuery, GetRecipeByIdDto> mapper,
         CancellationToken cancellationToken)
     {
         var result = await broker.Handle(mapper.Map(new GetRecipeByIdRequest(id)), cancellationToken);
@@ -73,8 +74,8 @@ public static class RecipeEndpoints
     }
 
     private static async Task<IResult> GetAllRecipes(
-        IQueryHandler<GetAllRecipesQuery, GetAllRecipesDto> broker,
-        IRequestToQueryMapper<GetAllRecipesRequest, GetAllRecipesQuery, GetAllRecipesDto> mapper,
+        [FromServices]IQueryHandler<GetAllRecipesQuery, GetAllRecipesDto> broker,
+        [FromServices]IRequestToQueryMapper<GetAllRecipesRequest, GetAllRecipesQuery, GetAllRecipesDto> mapper,
         CancellationToken cancellationToken)
     {
         var result = await broker.Handle(mapper.Map(new GetAllRecipesRequest()), cancellationToken);
@@ -82,16 +83,16 @@ public static class RecipeEndpoints
     }
 
     private static async Task<IResult> GetRecipesByProducts(GetRecipesByProductsRequest request,
-        IQueryHandler<GetRecipesByProductsQuery, GetRecipesByProductsDto> broker,
-        IRequestToQueryMapper<GetRecipesByProductsRequest, GetRecipesByProductsQuery, GetRecipesByProductsDto> mapper,
+        [FromServices]IQueryHandler<GetRecipesByProductsQuery, GetRecipesByProductsDto> broker,
+        [FromServices]IRequestToQueryMapper<GetRecipesByProductsRequest, GetRecipesByProductsQuery, GetRecipesByProductsDto> mapper,
         CancellationToken cancellationToken)
     {
         var result = await broker.Handle(mapper.Map(request), cancellationToken);
         return result.ToApiResult();
     }
 
-    private static async Task<IResult> DeleteRecipe(Guid id, ICommandHandler<DeleteRecipeCommand> broker,
-        IRequestToCommandMapper<DeleteRecipeRequest, DeleteRecipeCommand> mapper,
+    private static async Task<IResult> DeleteRecipe(Guid id, [FromServices]ICommandHandler<DeleteRecipeCommand> broker,
+        [FromServices]IRequestToCommandMapper<DeleteRecipeRequest, DeleteRecipeCommand> mapper,
         CancellationToken cancellationToken)
     {
         var result = await broker.Handle(mapper.Map(new DeleteRecipeRequest(id)), cancellationToken);
@@ -99,8 +100,8 @@ public static class RecipeEndpoints
     }
 
     private static async Task<IResult> UpdateRecipe(UpdateRecipeRequest request,
-        ICommandHandler<UpdateRecipeCommand> broker,
-        IRequestToCommandMapper<UpdateRecipeRequest, UpdateRecipeCommand> mapper,
+        [FromServices]ICommandHandler<UpdateRecipeCommand> broker,
+        [FromServices]IRequestToCommandMapper<UpdateRecipeRequest, UpdateRecipeCommand> mapper,
         CancellationToken cancellationToken)
     {
         var result = await broker.Handle(mapper.Map(request), cancellationToken);

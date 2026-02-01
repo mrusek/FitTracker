@@ -1,0 +1,4 @@
+- [X] endpoints showing
+- [ ] jwt working: halt
+- [ ] secret managing working: halt
+- [ ] db hooked up: halt

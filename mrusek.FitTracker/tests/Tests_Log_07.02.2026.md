@@ -1,0 +1,3 @@
+- [ ] jwt working
+- [ ] secret managing working
+- [ ] db hooked up
