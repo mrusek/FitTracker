@@ -1,3 +1,3 @@
-- [ ] jwt working
-- [ ] secret managing working
-- [ ] db hooked up
+- [X] jwt working
+- [X] secret managing working (multiple authentication schemes)
+- [X] db hooked up

@@ -1,0 +1,2 @@
+- [ ] Wypełnienie wszystkich handlerów i mapowań
+- [ ] prosty seed bazy danych
