@@ -5,6 +5,7 @@ using Riok.Mapperly.Abstractions;
 
 namespace mrusek.FitTracker.Api.Mapping;
 
+#pragma warning disable RMG013
 [Mapper]
 public partial class
     CreateRecipeRequestToCommandMapper : IRequestToCommandMapper<CreateRecipeRequest, CreateRecipeCommand>

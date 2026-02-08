@@ -22,9 +22,9 @@ public class AuditTrailConfiguration : IEntityTypeConfiguration<AuditTrail>
 
         builder.Property(e => e.TrailType).HasConversion<string>();
 
-        builder.Property(e => e.ChangedColumns).HasColumnType("jsonb");
-        builder.Property(e => e.OldValues).HasColumnType("jsonb");
-        builder.Property(e => e.NewValues).HasColumnType("jsonb");
+        builder.Property(e => e.ChangedColumns).HasColumnType("json");
+        builder.Property(e => e.OldValues).HasColumnType("json");
+        builder.Property(e => e.NewValues).HasColumnType("json");
 
         builder.HasOne(e => e.User)
             .WithMany()

@@ -22,6 +22,7 @@ public static class RecipeEndpoints
 
         var group = endpoints.MapGroup("api/v{apiVersion:apiVersion}/recipes")
             .RequireAuthorization("user")
+            //.AllowAnonymous()
             .WithTags("RecipesV1")
             .WithApiVersionSet(apiVersionSet)
             .RequireRateLimiting("fixed")

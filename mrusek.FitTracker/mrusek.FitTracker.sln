@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{47D6E160
 		tests\Tests_Log_31.01.2026.md = tests\Tests_Log_31.01.2026.md
 		tests\Tests_Log_01.02.2026.md = tests\Tests_Log_01.02.2026.md
 		tests\Tests_Log_07.02.2026.md = tests\Tests_Log_07.02.2026.md
+		tests\Tests_Log_14.02.2026.md = tests\Tests_Log_14.02.2026.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mrusek.FitTracker.UnitTests", "tests\mrusek.FitTracker.UnitTests\mrusek.FitTracker.UnitTests.csproj", "{2B3018EE-073A-4497-AA55-99D4A0010DF6}"
