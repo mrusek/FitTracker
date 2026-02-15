@@ -4,11 +4,10 @@ using mrusek.FitTracker.Application.Features.Products.Queries.v1;
 
 namespace mrusek.FitTracker.Application.Features.Products.Validation.v1;
 
-public class GetProductsBySearchCriteriaQueryValidator:AbstractValidator<GetProductsBySearchCriteriaQuery>
+public class GetProductsBySearchCriteriaQueryValidator : AbstractValidator<GetProductsBySearchCriteriaQuery>
 {
     public GetProductsBySearchCriteriaQueryValidator()
     {
-        Include(new SearchCriteriaValidator());
-        
+        RuleFor(x => x).SetValidator(new SearchCriteriaValidator());
     }
 }

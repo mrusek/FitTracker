@@ -1,6 +1,3 @@
-﻿namespace mrusek.FitTracker.Application.Features.Common.v1;
+﻿namespace mrusek.FitTracker.Application.Features.Common.Macro.v1;
 
-public class MacroSaveDto
-{
-    
-}
+public record MacroSaveDto(decimal Carbs, decimal Fats, decimal Proteins, decimal Calories, decimal Salt, decimal SaturatedFats, decimal SaturatedCarbs);

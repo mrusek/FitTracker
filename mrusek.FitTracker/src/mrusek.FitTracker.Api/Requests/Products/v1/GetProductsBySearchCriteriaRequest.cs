@@ -2,4 +2,4 @@
 
 namespace mrusek.FitTracker.Api.Requests.Products.v1;
 
-public sealed record GetProductsBySearchCriteriaRequest(SearchCriteria SearchCriteria);
+public sealed record GetProductsBySearchCriteriaRequest(int PageNumber, int RowsPerPage, string? SearchText);

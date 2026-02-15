@@ -11,6 +11,7 @@ using mrusek.FitTracker.Api.Middleware;
 using mrusek.FitTracker.Application;
 using mrusek.FitTracker.Application.Abstractions.Orchestration;
 using mrusek.FitTracker.Domain.Interfaces;
+using mrusek.FitTracker.Infrastructure;
 using mrusek.FitTracker.Infrastructure.Identity;
 using mrusek.FitTracker.Infrastructure.Persistence;
 using mrusek.FitTracker.Infrastructure.Services;
@@ -21,6 +22,7 @@ using OpenTelemetry.Trace;
 using Scalar.AspNetCore;
 using Serilog;
 using Serilog.Formatting.Json;
+using DependencyInjection = mrusek.FitTracker.Application.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,6 +48,8 @@ builder.Services.AddApiVersioning(options =>
     options.SubstituteApiVersionInUrl = true;
 });
 builder.Services.AddOpenApi();
+builder.Services.AddExceptionHandler<ValidationExceptionHandler>();
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 if (builder.Environment.IsDevelopment())
     builder.Services.AddSingleton<ISecretManager, UserSecretManager>();
 else
@@ -79,7 +83,8 @@ builder.Services.AddAuthentication(options =>
             RequireExpirationTime = true
         };
     });
-
+builder.Services.AddInfrastructure(builder.Configuration, builder.Environment);
+builder.Services.AddApplication();
 builder.Services.AddAuthorization();
 builder.Services.AddAuthorizationBuilder().AddAuthorizationPolicies();
 builder.Services.AddRateLimiter(options =>
@@ -91,7 +96,7 @@ builder.Services.AddRateLimiter(options =>
         config.Window = TimeSpan.FromMinutes(1);
     });
 });
-var connectionString =  builder.Configuration.GetConnectionString("fitTrackerDev");
+var connectionString = builder.Configuration.GetConnectionString("fitTrackerDev");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(connectionString,
         ServerVersion.AutoDetect(connectionString),

@@ -3,4 +3,4 @@ using mrusek.FitTracker.Application.Features.Recipes.Dto.v1;
 
 namespace mrusek.FitTracker.Application.Features.Recipes.Queries.v1;
 
-public sealed record GetRecipeByIdQuery(Guid id) : IQuery<GetRecipeByIdDto>;
+public sealed record GetRecipeByIdQuery(Guid Id) : IQuery<GetRecipeByIdDto>;

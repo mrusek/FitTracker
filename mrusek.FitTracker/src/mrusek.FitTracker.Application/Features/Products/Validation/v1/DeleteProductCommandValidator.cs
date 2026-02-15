@@ -8,6 +8,6 @@ public class DeleteProductCommandValidator:AbstractValidator<DeleteProductComman
 {
     public DeleteProductCommandValidator()
     {
-        
+        RuleFor(x => x.Id).NotEmpty();
     }
 }
